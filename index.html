@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Montserrat:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Product Card [Component]</title>
+  </head>
+  <body>
+    <main class="animate__animated animate__backInDown">
+      <picture>
+        <source media="(min-width: 616px)" srcset="images/img-desktop.png" />
+        <img
+          src="images/img-mobile.png"
+          alt="Rectangle shaped, light blue colored glass bottle of cologne."
+        />
+      </picture>
+      <div class="card-main-content">
+        <p class="card-category">cologne</p>
+        <h1 class="card-heading">Yves Saint Laurent Y Eau de Toilette</h1>
+        <p class="card-description">
+          Y Eau de Toilette is a fresh and clean men's cologne featuring
+          aromatic and fresh scents of sage and lavender at the heart with a
+          crisp bite of geranium.
+        </p>
+        <div class="card-price-container">
+          <p><span class="visually-hidden">Current Price</span>$149.99</p>
+          <del><span class="visually-hidden">Previous Price</span>$169.99</del>
+        </div>
+        <button><img src="images/icon-cart.svg" alt="" /> Add to Cart</button>
+      </div>
+    </main>
+  </body>
+</html>

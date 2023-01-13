@@ -1,0 +1,250 @@
+/* ******************** */
+/* VARIABLES */
+/* ******************** */
+
+:root {
+  --Dark-Blue: hsl(218, 39%, 41%);
+  --Btn-Hover: hsl(217, 38%, 24%);
+  --Very-Dark-Blue: hsl(212, 21%, 14%);
+  --Dark-Grayish-Blue: hsl(227, 15%, 49%);
+  --Background: linear-gradient(
+    0deg,
+    hsl(217, 68%, 15%) 0%,
+    hsla(215, 34%, 58%, 1) 100%
+  );
+  --White: hsl(0, 0%, 100%);
+
+  --Transition: 0.7s all;
+}
+
+/* ******************** */
+/* RESET */
+/* ******************** */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+}
+
+.visually-hidden {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--Background);
+}
+
+/* ******************** */
+/* CARD LAYOUT */
+/* ******************** */
+
+main {
+  max-width: 37.5rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.63rem;
+  overflow: hidden;
+  background: var(--White);
+  transition: 0.7s ease;
+  font-family: "Montserrat", sans-serif;
+  margin: 1.25rem;
+  box-shadow: 0 0 0.94rem 0.31rem rgba(0, 0, 0, 0.1);
+  transition: 0.7s ease;
+}
+
+main > * {
+  flex-basis: 50%;
+}
+
+/* ******************** */
+/* CARD LAYOUT IMG */
+/* ******************** */
+
+picture {
+  overflow: hidden;
+  transition: var(--Transition);
+}
+
+picture:hover img {
+  transform: scale(1.3);
+  filter: brightness(1.3);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--Transition);
+}
+
+/* ******************** */
+/* CARD LAYOUT TEXT */
+/* ******************** */
+
+.card-main-content {
+  padding: 1.25rem;
+  transition: var(--Transition);
+}
+
+.card-category {
+  font-size: 0.75rem;
+  color: var(--Dark-Grayish-Blue);
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+}
+
+.card-heading {
+  font-size: clamp(1.63rem, calc(1.34rem + 1.43vw), 1.88rem);
+  font-family: "Fraunces", serif;
+  color: var(--Very-Dark-Blue);
+  line-height: 1.25;
+  font-weight: 700;
+  margin-top: 0.88rem;
+  margin-bottom: 0.5rem;
+  transition: var(--Transition);
+}
+
+.card-description {
+  font-size: clamp(0.75rem, calc(0.61rem + 0.71vw), 0.88rem);
+  line-height: 1.7;
+  color: var(--Dark-Grayish-Blue);
+  margin-bottom: 1.13rem;
+  transition: var(--Transition);
+}
+
+.card-price-container {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.13rem;
+}
+
+.card-price-container p {
+  font-size: clamp(1.63rem, calc(1.34rem + 1.43vw), 1.88rem);
+  font-family: "Fraunces", serif;
+  color: var(--Dark-Blue);
+  font-weight: 700;
+  margin-bottom: 0;
+  transition: var(--Transition);
+}
+
+.card-price-container span {
+  text-decoration: line-through;
+  color: var(--Dark-Grayish-Blue);
+}
+
+button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.63rem;
+  text-align: center;
+  color: var(--White);
+  padding: 0.88rem 2rem;
+  border-radius: 0.63rem;
+  background: var(--Dark-Blue);
+  transition: var(--Transition);
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--Btn-Hover);
+}
+
+button img {
+  width: 1rem;
+}
+
+/* ******************** */
+/* MEDIA QUERY */
+/* ******************** */
+
+@media (hover: hover) {
+  button:hover {
+    background: var(--Btn-Hover);
+  }
+}
+
+@media (min-width: 38.5em) {
+  main {
+    flex-direction: row;
+  }
+
+  .card-main-content {
+    padding: 1.88rem;
+  }
+
+  .card-heading {
+    margin-top: 1.06rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-description {
+    margin-bottom: 1.38rem;
+  }
+}
